@@ -1,5 +1,5 @@
 
-<center><h1> WHA'TS APP BOT DA 3X SOLUTIONS</h1></center>
+<center><h1> WHAT'S APP BOT DA 3X SOLUTIONS</h1></center>
 <p>
 bot automatizado para envio de mensagens no what's app.
 </p>
