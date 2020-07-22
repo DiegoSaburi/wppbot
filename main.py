@@ -20,7 +20,7 @@ while conversas != []:
         print("Estado atual: ", conversa.estado_atual)
         print("==================")
         check_envio = wppbot.send(conversa.numero, conversa.mensagens())
-        conversa.enviado = check_envio
+        conversa.enviado = check_envio #checando se a mensagem foi enviada
         conversa.check_state()
         print("Estado atual: ", conversa.estado_atual)
         print("==================")
