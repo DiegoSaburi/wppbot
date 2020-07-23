@@ -7,14 +7,15 @@ class Conversa():
         self.enviado = False
         self.estado_final = 3
         self.resposta_user = None
-
+    def __str__(self):
+        return self.numero
     def mensagens(self):
         '''
         Retorna a mensagem de cada etapa
         '''
         mensagens = {
-            1 : "*[mensagem de bot automatizado]*, igor vc é um cuzão",
-            2 : "*[mensagem de bot automatizado]*, igor na real vc é brother"
+            1 : "MENSAGEM DE TESTE 1",
+            2 : "MENSAGEM DE TESTE 2"
         }
 
         return mensagens[self.estado_atual]

@@ -6,13 +6,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from conversa import Conversa
+from time import sleep
 
 wppbot = Driver()
 wppbot.inicializar
-
-alice = Conversa('Sei Lá N Sei Explicar ♥️♥️♥️♥️')
-igor = Conversa('Igor Arrombado Filho Da Puta Escroto De Merda Da Desgraça')
-conversas = [alice,igor]
 
 while conversas != []:
     for conversa in conversas:

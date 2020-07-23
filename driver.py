@@ -23,8 +23,33 @@ class Driver (Chrome):
         '''
         self.get('https://web.whatsapp.com/')
         input("Por favor escaneie o qrcode, Pressione enter quando escanear")
+    def get_resposta(self):
+        '''
+        Verifica a resposta do cliente e retorna a
+        resposta dada e o horário enviado
+        obs.: retorna-se dois valores para 
+        evitar discrepancias
+        DEVE-SE ABRIR A CONVERSA ANTES DE UTILIZA-LA
+        '''
+        last_message_xpath = '(//span[@dir = "ltr"])[last()]'
+        last_message_time_xpath = '(//span[@class="_18lLQ"])[last()]'
+        try:
+            last_message_element = self.find_element_by_xpath(last_message_xpath)
+        except:
+            print("Erro na hora de encontrar classe")
+        try:
+            last_message_time_element = self.find_element_by_xpath(last_message_time_xpath)
+            last_message_time = last_message_time_element.text
+        except:
+            print("Erro na hora de encontrar classe do horario da msg")
+        try:
+            last_message = last_message_element.text
+        except:
+            print("não foi possível retirar texto")
         
-    def check_conversa(self, numero):
+        return last_message, last_message_time
+
+    def check_conversa(self, numero : str):
         global GLOBAL_DELAY
         conversa_xpath = f"//span[@title='{numero}']"
 
@@ -42,7 +67,7 @@ class Driver (Chrome):
 
             return False
 
-    def send(self,mensagem):
+    def send(self,mensagem : str):
         '''
         Manda a mensagem para a conversa ja aberta no bot
         '''
@@ -71,7 +96,7 @@ class Driver (Chrome):
             print("-> Não foi encontrado o botão de envio")
 
             return False
-    def send_to(self,numero,mensagem):
+    def send_to(self,numero : str ,mensagem : str):
         '''
             Manda a mensagem para o numero designado
         '''
