@@ -23,6 +23,15 @@ class Driver (Chrome):
         '''
         self.get('https://web.whatsapp.com/')
         input("Por favor escaneie o qrcode, Pressione enter quando escanear")
+
+    def unread_msg(self):
+        cls_conversas = '_210SC' #classe das conversas (len = 17)
+        cls_nome = '_3CneP' #classe com o nome da pessoa 
+        cls_naoLido = '_31gEB' #classe presente em conversas não lidas
+        cvrs = self.find_elements_by_class_name(cls_conversas) #achar conversas
+        cvrs_nL = [pessoa for pessoa in cvrs if pessoa.find_elements_by_class_name(cls_naoLido) != []] #filtrar conversas não lidas
+        nomes = [pessoa.find_element_by_class_name(cls_nome).text for pessoa in cvrs_nL] #separar o nome dessas conversas
+        return nomes 
         
     def check_conversa(self, numero):
         global GLOBAL_DELAY
