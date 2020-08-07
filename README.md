@@ -5,7 +5,11 @@ bot automatizado para envio de mensagens no what's app.
 </p>
 
 <h2>Diagrama de estados</h2>
-<img src = "https://cdn.discordapp.com/attachments/644211873906032673/735574350614364230/unknown.png" alt="fluxograma">
+<img src = "https://cdn.discordapp.com/attachments/644211873906032673/735574350614364230/unknown.png" alt="fluxograma bot">
+<p>
+FSM:
+</p>
+<img src = "https://cdn.discordapp.com/attachments/644211873906032673/741359786188079165/unknown.png" alt="fluxograma FSM">
 
 <h2>Tecnologias necessárias</h2>
 <ul>
